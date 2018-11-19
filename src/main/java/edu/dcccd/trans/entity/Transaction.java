@@ -1,15 +1,22 @@
 package edu.dcccd.trans.entity;
 
 import lombok.Data;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
+
+@Entity
+@Table(name = "TRANSACTION")
 @Data
 public class Transaction
 {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String time;
     @NotNull
@@ -19,6 +26,7 @@ public class Transaction
     @NotEmpty
     private String description;
     @NotNull
+    @Column( precision=7, scale=2)
     private BigDecimal amount;
     @NotNull
     private String type;
