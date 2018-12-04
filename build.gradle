@@ -38,5 +38,5 @@ dependencies {
     runtimeOnly('com.h2database:h2')
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation('org.springframework.boot:spring-boot-starter-data-rest')
-    compile ('com.heroku.sdk:heroku-deploy:2.0.6')
+    compile 'com.heroku.sdk:heroku-deploy:2.0.6'
 }
